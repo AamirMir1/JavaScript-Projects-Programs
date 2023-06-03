@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption</title>
+    <style>
+        #encrypted {
+            display: block;
+        }
+
+        input {
+            width: 80vw;
+            margin: 10px 0px;
+            border-radius: 8px;
+            outline: none;
+            border: 2px solid gray;
+            padding: 10px 15px;
+        }
+
+        button {
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="encryption">
+        <input id="encry" type="text" required placeholder="Type Here To Encrypt Your Text">
+        <button id="encrypt">Encrypt</button>
+        <details id="encrypted">
+            <summary>Encrypted Value</summary>
+        </details>
+    </div>
+    <div id="decryption">
+        <input id="decry" type="text" required placeholder="Type Here To Decrypt Your Text">
+        <button id="decrypt">Decrypt</button>
+        <details id="decrypted">
+            <summary>Decrypted Value</summary>
+        </details>
+    </div>
+
+
+    <script>
+        let txt = document.getElementById("encry")
+        let btn = document.getElementById("encrypt")
+        let encrypted = document.getElementById("encrypted")
+        let decrypted = document.getElementById("decrypted")
+
+        let reBtn = document.getElementById("decrypt")
+        let reTxt = document.getElementById("decry")
+
+        let arr = []
+        let converted = []
+        let coded = ""
+        let decode = ""
+
+        function converter() {
+            arr.forEach((elem) => {
+                converted.push(elem.charCodeAt())
+            })
+            converted.forEach((elem) => {
+                coded += `${elem},`
+            })
+            encrypted.innerHTML = coded
+            arr = []
+            converted = []
+            coded = ""
+        }
+
+        btn.addEventListener("click", () => {
+            if (txt.value) {
+                let convert = txt.value.split("")
+                convert.forEach(elem => {
+                    arr.push(elem)
+                });
+                console.log(arr)
+                converter()
+            }
+        })
+        reBtn.addEventListener("click", () => {
+            decode = ""
+            let reConverted = reTxt.value.split(",")
+            reConverted.forEach((elem) => {
+                decode += String.fromCharCode(elem)
+            })
+            decrypted.innerHTML = decode
+            decode = ""
+
+        })
+    </script>
+</body>
+
+</html>

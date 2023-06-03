@@ -1,0 +1,31 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#childDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+#Date{
+ width: 100%;
+ height: 50px;
+ font-size: 25px;
+}
+.AlarmBt1{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    background-color: blue;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+#StopBtn{
+    background-color: gray;
+}

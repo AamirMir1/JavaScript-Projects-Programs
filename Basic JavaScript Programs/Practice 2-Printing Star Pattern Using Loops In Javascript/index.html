@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printing Star Pattern</title>
+</head>
+
+<body>
+    <h1>Printing Star Pattern</h1>
+</body>
+<script>
+    let i = 0;
+    let howMany = Number(prompt('How many times you want to print star pattern?')) 
+    console.log(howMany)
+    if(isNaN(howMany)){
+       let cont = alert('Please Add Only Numbers')
+       if(cont === undefined){
+        howMany = Number(prompt('How many times you want to print star pattern?')) 
+       }
+    }
+
+    if(howMany==''){
+        alert('Please Add A Number')
+    }
+    
+    let star = "+"
+    let star2 = "+"
+    let index = 0;
+    for (i = 0; i < howMany; i++) {
+        star = star + star2
+        console.log(star)
+        for (index = 2; index < howMany; index += 3) {
+            if (index == i) {
+                console.log('New Line')
+            }
+        }
+    }
+    
+
+</script>
+
+</html>

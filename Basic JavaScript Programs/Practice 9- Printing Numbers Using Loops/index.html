@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loop</title>
+    <style>
+        .container {
+            width: 50vw;
+            margin: auto;
+            border: 2px solid red;
+            height: 90vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .box {
+            border: 2px solid green;
+            
+        }
+        #box3{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            font-size: larger;
+            justify-content: flex-end;
+            text-align: right;
+        }
+        #box2{
+            display: flex;
+            align-items: flex-end;
+            font-size: larger;
+        }
+        #box1{
+            display: flex;
+            align-items: flex-end;
+            font-size: larger;
+            text-align: right;
+            justify-content: flex-end;
+        }
+        #box4{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <script>
+        for (let a = 1; a <= 10; a++) {
+            let box2 = document.getElementById('box2')
+            for (var b = 1; b <= a; b++) {
+                let box2 = document.getElementById('box2')
+                let text = document.createTextNode(b)
+                box2.appendChild(text)
+            }
+            let text2 = document.createElement('br')
+            box2.appendChild(text2)
+        }
+
+        for (let a = 9; a >= 1; a--) {
+            let box4 = document.getElementById('box4')
+            for (var b = 1; b <= a; b++) {
+                let box4 = document.getElementById('box4')
+                let text = document.createTextNode(a)
+                box4.appendChild(text)
+            }
+            let text2 = document.createElement('br')
+            box4.appendChild(text2)
+        }
+
+        for (let a = 9; a >= 1; a--) {
+            let box3 = document.getElementById('box3')
+            for (var b = a; b>=1; b--) {
+                let box3 = document.getElementById('box3')
+                let text = document.createTextNode(a)
+                box3.appendChild(text)
+            }
+            let text2 = document.createElement('br')
+            box3.appendChild(text2)
+        }
+        for (let a = 1; a < 10; a++) {
+            let box1 = document.getElementById('box1')
+            for (var b = 1; b<=a; b++) {
+                let box1 = document.getElementById('box1')
+                let text = document.createTextNode(a)
+                box1.appendChild(text)
+            }
+            let text2 = document.createElement('br')
+            box1.appendChild(text2)
+        }
+    </script>
+</body>
+
+</html>
